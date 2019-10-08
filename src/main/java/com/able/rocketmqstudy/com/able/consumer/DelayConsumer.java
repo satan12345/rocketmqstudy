@@ -30,7 +30,8 @@ public class DelayConsumer {
             @Override
             public ConsumeConcurrentlyStatus consumeMessage(List<MessageExt> msgs, ConsumeConcurrentlyContext context) {
                 for (MessageExt msg : msgs) {
-                    log.info("当前时间为：{},接收到的消息为:{}", new Date(), JSONObject.parseObject(msg.getBody(), TimeModel.class));
+                    //log.info("当前时间为：{},接收到的消息为:{}", new Date(), JSONObject.parseObject(msg.getBody(), TimeModel.class));
+                    log.info("延迟时间为:{}",System.currentTimeMillis()-msg.getStoreTimestamp());
                 }
                 return ConsumeConcurrentlyStatus.CONSUME_SUCCESS;
             }
