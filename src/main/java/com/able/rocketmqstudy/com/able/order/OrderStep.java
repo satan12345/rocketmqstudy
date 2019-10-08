@@ -44,44 +44,28 @@ public class OrderStep {
         orderDemo.setOrderId(1039L);
         orderDemo.setDesc("创建");
         orderList.add(orderDemo);
-
-        orderDemo = new OrderStep();
-        orderDemo.setOrderId(1065L);
-        orderDemo.setDesc("创建");
-        orderList.add(orderDemo);
-
         orderDemo = new OrderStep();
         orderDemo.setOrderId(1039L);
         orderDemo.setDesc("付款");
         orderList.add(orderDemo);
-
-        orderDemo = new OrderStep();
-        orderDemo.setOrderId(7235L);
-        orderDemo.setDesc("创建");
-        orderList.add(orderDemo);
-
-        orderDemo = new OrderStep();
-        orderDemo.setOrderId(1065L);
-        orderDemo.setDesc("付款");
-        orderList.add(orderDemo);
-
-        orderDemo = new OrderStep();
-        orderDemo.setOrderId(7235L);
-        orderDemo.setDesc("付款");
-        orderList.add(orderDemo);
-
-        orderDemo = new OrderStep();
-        orderDemo.setOrderId(1065L);
-        orderDemo.setDesc("完成");
-        orderList.add(orderDemo);
-
         orderDemo = new OrderStep();
         orderDemo.setOrderId(1039L);
         orderDemo.setDesc("推送");
         orderList.add(orderDemo);
+        /////////////////////////////
 
         orderDemo = new OrderStep();
-        orderDemo.setOrderId(7235L);
+        orderDemo.setOrderId(1065L);
+        orderDemo.setDesc("创建");
+        orderList.add(orderDemo);
+
+        orderDemo = new OrderStep();
+        orderDemo.setOrderId(1065L);
+        orderDemo.setDesc("付款");
+        orderList.add(orderDemo);
+
+        orderDemo = new OrderStep();
+        orderDemo.setOrderId(1065L);
         orderDemo.setDesc("完成");
         orderList.add(orderDemo);
 
@@ -89,6 +73,25 @@ public class OrderStep {
         orderDemo.setOrderId(1039L);
         orderDemo.setDesc("完成");
         orderList.add(orderDemo);
+
+        //////////////////////////////////////////
+
+
+        orderDemo = new OrderStep();
+        orderDemo.setOrderId(7235L);
+        orderDemo.setDesc("创建");
+        orderList.add(orderDemo);
+        orderDemo = new OrderStep();
+        orderDemo.setOrderId(7235L);
+        orderDemo.setDesc("付款");
+        orderList.add(orderDemo);
+
+        orderDemo = new OrderStep();
+        orderDemo.setOrderId(7235L);
+        orderDemo.setDesc("完成");
+        orderList.add(orderDemo);
+
+
 
         return orderList;
     }

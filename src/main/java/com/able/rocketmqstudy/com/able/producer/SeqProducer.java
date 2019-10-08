@@ -27,15 +27,16 @@ import java.util.concurrent.TimeUnit;
 public class SeqProducer {
 
     public static void main(String[] args) throws MQClientException, RemotingException, InterruptedException {
-        DefaultMQProducer producer = new DefaultMQProducer("group1");
+        DefaultMQProducer producer = new DefaultMQProducer("group");
 
         producer.setNamesrvAddr(Constants.NAME_SERVER);
 
         producer.start();
 
         List<OrderStep> orderSteps = OrderStep.buildOrders();
-        for (OrderStep orderStep : orderSteps) {
-            Message message = new Message("seq", "", JSON.toJSONString(orderStep).getBytes());
+        for (int i = 0; i < orderSteps.size(); i++) {
+            OrderStep orderStep = orderSteps.get(i);
+            Message message = new Message("seqOrder", "Order", i + "", JSON.toJSONString(orderStep).getBytes());
             producer.send(message, (mqs, msg, arg) -> {
                 Long orderId = (Long) arg;
                 Long l = orderId % mqs.size();
@@ -54,7 +55,8 @@ public class SeqProducer {
             });
             TimeUnit.MICROSECONDS.sleep(20);
         }
-        TimeUnit.SECONDS.sleep(20);
+
+        TimeUnit.SECONDS.sleep(5);
         producer.shutdown();
 
     }
